@@ -60,6 +60,7 @@ public class Student {
         return (g == null || g.isEmpty()) ? "N/A" : g;
     }
 
+    /** Standard GPA scale at NCA&T */
     private static double gradePoints(String g) {
         switch (g) {
             case "A": return 4.0;

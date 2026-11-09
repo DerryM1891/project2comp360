@@ -5,7 +5,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-/** Swing GUI for the General University Management System. */
+/** Main GUI for the Project */
 public class UniversityManagementSystem extends JFrame {
 
     private final Map<String, Student> students = new LinkedHashMap<>();
@@ -51,15 +51,26 @@ public class UniversityManagementSystem extends JFrame {
     }
 
     private void loadCatalog() {
+        catalog.add(new Course("COMP 121", "Freshman Colq.", 1));
+        catalog.add(new Course("COMP 163", "Computer Science I", 3));
         catalog.add(new Course("COMP 167", "Computer Science I", 3));
+        catalog.add(new Course("COMP 180", "Discrete Structures", 3));
+         catalog.add(new Course("COMP 200", "Sophmore Colq.", 1));
         catalog.add(new Course("COMP 280", "Data Structures", 3));
+        catalog.add(new Course("COMP 285", "Computer Science I", 3));
+         catalog.add(new Course("COMP 300", "Junior Colq.", 1));
         catalog.add(new Course("COMP 320", "Cybersecurity Fundementals", 3));
+        catalog.add(new Course("COMP 322", "Internet Systems", 3));
+        catalog.add(new Course("COMP 167", "Operating Systems", 3));
         catalog.add(new Course("COMP 365", "AI/ML", 3));
         catalog.add(new Course("COMP 410", "Software Engineering", 3));
         catalog.add(new Course("COMP 610", "Advanced Algorithms", 3));
         catalog.add(new Course("COMP 720", "Network Security", 3));
         catalog.add(new Course("MATH 131", "Calculus I", 3));
+        catalog.add(new Course("MATH 132", "Calculus II", 3));
         catalog.add(new Course("MATH 251", "Statistics & Probability", 3));
+        catalog.add(new Course("MATH 351", "Linear Algebra", 3));
+
         for (Course c : catalog) courseBox.addItem(c);
     }
 
@@ -224,7 +235,7 @@ public class UniversityManagementSystem extends JFrame {
         if (c == null) return;
         String note = s.setGrade(c.getCode(), gradeField.getText())
                 ? "Grade recorded for " + c.getCode() + ".\n\n"
-                : "Could not set grade. Student must be registered for the course and grade must be A, B, C, D or F.\n\n";
+                : "Could not set grade. Student must be registered for the course and grade must be A/A-, B+/B/B-, C+/C/C-, D+/D/D- or F.\n\n";
         regOutput.setText(note + s.registrationSummary());
     }
 

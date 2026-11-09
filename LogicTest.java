@@ -6,6 +6,7 @@ public class LogicTest {
         MSStudent ms = new MSStudent("Lee", "Ann", "555", "2", "addr");
         PhDStudent phd = new PhDStudent("Kim", "Joe", "555", "3", "addr");
 
+    // Logic checks to insure inputs are taken in correctly
         check(bs.registerCourse(a), "register");
         check(!bs.registerCourse(a), "duplicate rejected");
         bs.registerCourse(b);
